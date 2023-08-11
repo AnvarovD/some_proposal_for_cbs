@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Post;
 use App\Repositories\NewRepository\BaseEloquentRepository\BaseRepositoryInterface;
 use App\UseCase\IndexPostUseCase;
+use Illuminate\Http\Request;
 
 class NewApiController extends Controller
 {
@@ -23,7 +24,7 @@ class NewApiController extends Controller
        return $this->baseRepository->setModel(PostEntity::getModel())->show($id)->first();
     }
 
-    public function index()
+    public function index(Request $request)
     {
        return $this->indexPostUseCase->perform();
     }
