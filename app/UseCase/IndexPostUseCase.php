@@ -37,18 +37,7 @@ class IndexPostUseCase extends BaseUseCase
             ->newFilter(
                 $request,
                 [
-                    TransactionByCreditId::class,
-                    TransactionByCreditIdOrRequestedCreditId::class,
                     TransactionByDate::class,
-                    TransactionByIsCancelled::class,
-                    TransactionByIsTransferred::class,
-                    TransactionByLabel::class,
-                    TransactionByPaid::class,
-                    TransactionByPaymentMethodKeys::class,
-                    TransactionByPaymentType::class,
-                    TransactionByTimeFrom::class,
-                    TransactionByTimeTo::class,
-                    TransactionCreditByContractNumberFilter::class,
                 ]
             )->get();
 //        static::$entity = PostEntity::class;
